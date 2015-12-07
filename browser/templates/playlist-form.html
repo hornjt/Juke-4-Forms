@@ -1,0 +1,25 @@
+
+
+    <form class="form-horizontal" novalidate name="userForm" ng-submit="buttonPressed(playListInput)">
+        <fieldset>
+            <legend>New Playlist</legend>
+            
+            <div class="form-group" >
+                <label class="col-xs-2 control-label">Title</label>
+                <div class="col-xs-10">
+                    <input class="form-control" name="thePlaylist" type="text" ng-model="playListInput.name" required ng-maxlength="16">
+                    <p>{{ {'name' : playListInput} | json }}</p>
+                    <span ng-show="userForm.$invalid && !userForm.$submitted && userForm.thePlaylist.$dirty">this is invalid</span>
+                  
+                    
+                </div>
+            </div>
+            <div class="form-group" >
+                <div class="col-xs-10 col-xs-offset-2">
+                    <button type="submit" class="btn btn-success" ng-disabled="userForm.$invalid">Create Playlist</button>
+                </div>
+            </div>
+           
+        </fieldset>
+    </form>
+</div>
